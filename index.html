@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATS Resume Analyzer</title>
+<meta name="description" content="Free ATS resume checker. Your resume is analyzed in your browser and never uploaded.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <b>ATS Analyzer</b>
+  <nav><button id="nA" class="on">Analyze</button><button id="nH">History</button></nav>
+  <span class="sp"></span><span class="mute" style="font-size:.9rem">Runs in your browser. Your resume is never uploaded.</span>
+</header>
+<main>
+  <div id="paneA">
+    <div class="card">
+      <h1>Check your resume against ATS rules</h1>
+      <p class="mute" style="margin:0 0 18px">Upload a PDF or DOCX. Add a job description to get a tailored keyword match.</p>
+      <div class="up">
+        <div id="drop" tabindex="0" role="button" aria-label="Choose resume file"><b id="dropT">Drop your resume here</b><span class="mute" id="dropS">or click to choose a file (PDF or DOCX, max 5 MB)</span></div>
+        <div><label for="jd">Job description (optional)</label><textarea id="jd" placeholder="Paste the job description here"></textarea></div>
+      </div>
+      <input id="file" type="file" accept=".pdf,.docx" hidden>
+      <button class="btn" id="go" style="margin-top:18px" disabled>Analyze resume</button>
+      <div id="err" class="err" role="alert"></div>
+    </div>
+    <div id="result" hidden>
+      <div class="res">
+        <div class="card gauge"><div id="gauge"></div><div class="lbl" id="verdict"></div><div class="mute" id="fname" style="font-size:.88rem"></div><div id="cats" style="margin-top:12px"></div></div>
+        <div>
+          <div class="card"><h3>Top fixes</h3><div id="fixes"></div></div>
+          <div class="card"><h3>Skills</h3><div id="skills"></div>
+            <p class="note" style="margin:0">This is an ATS-readiness estimate. Real systems (Workday, Greenhouse, Lever) parse differently, so no tool can give an exact ATS score.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="paneH" hidden><div class="card"><h2>Your analyses</h2><div id="hlist"></div>
+    <p class="note">Saved only in this browser (scores and skills, never your resume text). The number in brackets is the change versus your previous upload.</p>
+    <button class="link" id="clear">Clear all history</button></div></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="scorer.js"></script>
+<script src="extract.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
