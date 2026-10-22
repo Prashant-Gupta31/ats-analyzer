@@ -43,7 +43,7 @@ extract.js    PDF/DOCX to text
 2. Open `index.html` in your browser (internet is needed once to load pdf.js and mammoth from a CDN)
 
 ## Deploy
-Drag the project folder onto [app.netlify.com/drop](https://app.netlify.com/drop), or connect the GitHub repo to Netlify with an empty build command.
+elegant-lollipop-860a2d.netlify.app
 
 ## Limitations
 - This is an **ATS-readiness estimate**. Real systems such as Workday, Greenhouse and Lever each parse resumes differently, so no tool can give an exact ATS score.
@@ -57,5 +57,3 @@ Drag the project folder onto [app.netlify.com/drop](https://app.netlify.com/drop
 - Downloadable PDF report
 - Optional AI-powered bullet rewriting
 
-## Author
-Built by Prashant Gupta.
